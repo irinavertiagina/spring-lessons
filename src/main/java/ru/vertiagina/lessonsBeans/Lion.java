@@ -1,51 +1,22 @@
 package ru.vertiagina.lessonsBeans;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Author irkin
  **/
+@Component("lion_BEAN")
 public class Lion implements Animal {
-    //fields
-    Part part;
-    String name;
-    int age;
+
 
     //ctor
     public Lion() {
     }
 
-    public Lion(Part part) {
-        this.part = part;
-    }
-
-    public Lion(Part part, String name, int age) {
-        this.part = part;
-        this.name = name;
-        this.age = age;
-    }
-
-    //setter and getter
-    public Part getPart() {
-        return part;
-    }
-
-    public void setPart(Part part) {
-        this.part = part;
-    }
-
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
-    public String makeNoise() {
-        return "I am a LION " + name + part.getPart() + age + " age old ";
-    }
-
+@Override
+public String makeNoise() {
+    return "I am a LION ";
+}
     //init
     public void doInit() {
         System.out.println("Initializing LION bean...");

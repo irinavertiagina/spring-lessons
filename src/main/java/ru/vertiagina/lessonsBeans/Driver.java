@@ -24,8 +24,16 @@ public class Driver {
 
 
         //////3 example witj zoo
-        Zoo zoo = context.getBean("zoo_BEAN", Zoo.class);
-        zoo.showAllAnimals();
+//        Zoo zoo = context.getBean("zoo_BEAN", Zoo.class);
+//        zoo.showAllAnimals();
+
+
+        //4 ex
+        Animal animalBean = context.getBean("tiger", Tiger.class);
+        Zoo zoo = new Zoo(animalBean);
+        zoo.showAnimal();
+
+
 
        context.close();
 

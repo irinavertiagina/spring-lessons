@@ -1,25 +1,17 @@
 package ru.vertiagina.lessonsBeans;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Author irkin
  **/
+@Component
 public class Tiger implements Animal {
 
-    //fields
-    Part part;
-    String name;
-    int age;
+
 
     //ctors
     private Tiger() {
-    }
-    private Tiger(Part part) {
-        this.part = part;
-    }
-    private Tiger(Part part, String name, int age) {
-        this.part = part;
-        this.name = name;
-        this.age = age;
     }
 
     //factory method
@@ -29,7 +21,7 @@ public class Tiger implements Animal {
 
     @Override
     public String makeNoise() {
-        return "I am a TIGER "+name + part.getPart() +age+" age old " ;
+        return "I am a TIGER " ;
     }
 
     //init
@@ -41,19 +33,4 @@ public class Tiger implements Animal {
         System.out.println("Destroying TIGER bean...");
     }
 
-    //setters and getters
-    public Part getPart() {
-        return part;
-    }
-    public void setPart(Part part) {
-        this.part = part;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }

@@ -8,9 +8,12 @@ import java.util.List;
  **/
 public class Zoo {
     List <Animal> zoo = new ArrayList<>();
+    Animal animal;
 
     public Zoo() {
     }
+
+    public Zoo(Animal animal){ this.animal = animal;}
 
     public Zoo(List<Animal> zoo) {
         this.zoo = zoo;
@@ -26,6 +29,9 @@ public class Zoo {
     }
 
 
+    public void showAnimal(){
+        System.out.println(animal.makeNoise());
+    }
 
     public void showAllAnimals(){
         for(int i = 0; i<zoo.size();i++){

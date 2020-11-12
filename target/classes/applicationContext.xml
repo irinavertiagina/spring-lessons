@@ -7,63 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--file-->
-    <context:property-placeholder location="classpath:animal.properties"/>
-
-    <bean id="higga_BEAN"
-          class="ru.vertiagina.lessonsBeans.Paw">
-    </bean>
-
-    <!--1 example-->
-    <bean id="part_BEAN"
-          class="ru.vertiagina.lessonsBeans.Tail">
-    </bean>
-
-
-    <!--2 example-->
-    <!--dependency injection with setter-->
-    <!--dependency injection with value -->
-    <!--dep inj with file-->
-    <bean id="animal_BEAN"
-          class="ru.vertiagina.lessonsBeans.Lion"
-          init-method="doInit"
-          destroy-method="doDestroy"
-    scope="prototype">
-        <property name="part" ref="part_BEAN"/>
-        <property name="name" value="Higgs"/>
-        <property name="age" value="${Animal.age}"/>
-    </bean>
-
-    <bean id="animal_BEAN_2"
-          class="ru.vertiagina.lessonsBeans.Tiger"
-    init-method="doInit"
-    destroy-method="doDestroy"
-    scope="prototype"
-    factory-method="factory">
-        <property name="part" ref="part_BEAN"/>
-        <property name="name" value="${Animal.name}"/>
-        <property name="age" value="${Animal.age}"/>
-
-    </bean>
-    <!--dependency injection with ctor-->
-    <bean id="cage_BEAN"
-          class="ru.vertiagina.lessonsBeans.Cage">
-        <constructor-arg ref="animal_BEAN" />
-    </bean>
-
-    <!--3 example-->
-
-    <bean id ="zoo_BEAN" class="ru.vertiagina.lessonsBeans.Zoo">
-        <property name="zoo" ref="animalList_BEAN"/>
-    </bean>
-
-    <bean id="animalList_BEAN" class="java.util.ArrayList">
-        <constructor-arg>
-            <list>
-                <ref bean="animal_BEAN" />
-                <ref bean="animal_BEAN_2" />
-            </list>
-        </constructor-arg>
-    </bean>
+    <!--where to look for beans-->
+     <context:component-scan base-package="ru.vertiagina.lessonsBeans"/>
 
 </beans>
