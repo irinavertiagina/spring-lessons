@@ -1,43 +1,33 @@
 package ru.vertiagina.lessonsBeans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Author irkin
  **/
+@Component
 public class Zoo {
-    List <Animal> zoo = new ArrayList<>();
+
     Animal animal;
+ 
+    public Zoo() {}
 
-    public Zoo() {
+    @Autowired
+    public Zoo(Animal animal ){
+        this.animal = animal;
     }
 
-    public Zoo(Animal animal){ this.animal = animal;}
-
-    public Zoo(List<Animal> zoo) {
-        this.zoo = zoo;
-    }
-
-
-    public List<Animal> getZoo() {
-        return zoo;
-    }
-
-    public void setZoo(List<Animal> zoo) {
-        this.zoo = zoo;
-    }
 
 
     public void showAnimal(){
-        System.out.println(animal.makeNoise());
+        System.out.println(animal.makeNoise() );
     }
 
-    public void showAllAnimals(){
-        for(int i = 0; i<zoo.size();i++){
-            System.out.println(zoo.get(i).makeNoise());
-        }
 
-     }
 
-}
+     }//class
+

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 /**
  * Author irkin
  **/
-@Component("lion_BEAN")
+@Component
 public class Lion implements Animal {
 
 
