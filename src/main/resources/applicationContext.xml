@@ -9,5 +9,7 @@
 
     <!--where to look for beans-->
      <context:component-scan base-package="ru.vertiagina.lessonsBeans"/>
+    <!--external file-->
+    <context:property-placeholder location="classpath:animal.properties"/>
 
 </beans>

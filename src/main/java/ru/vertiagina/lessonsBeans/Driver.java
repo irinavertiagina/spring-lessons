@@ -12,6 +12,7 @@ public class Driver {
 
         //All animal-beans are autowired into zoo
         Zoo zoo = context.getBean("zoo", Zoo.class);
+        System.out.println();
         zoo.showAllAnimals();
 
 
