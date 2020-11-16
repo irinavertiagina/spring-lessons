@@ -9,7 +9,7 @@ import javax.annotation.PreDestroy;
  * Author irkin
  **/
 @Component
-@Scope("singleton")
+@Scope("prototype")
 public class Lion implements Animal {
 
 
